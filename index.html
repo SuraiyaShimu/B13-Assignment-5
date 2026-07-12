@@ -74,7 +74,7 @@
 
       <!-- navbar -->
          <div class="navbar bg-white shadow px-8">
-            <div class="flex=1 flex items-center gap-3">
+            <div class="flex-1 flex items-center gap-3">
                 <img src="./assets/github-logo.png" class="w-10" alt="">
                 <h1 class="text-2xl font-bold">GitHub Issues Tracker</h1>
 
@@ -88,13 +88,13 @@
          </div>
 
          <!-- main container -->
-            <div class="max-w-7xl max auto px-6 py-8">
+            <div class=" px-6 py-8">
                 <!-- tabs -->
-                 <div class="tabs tabs-box bg-white">
+                 <div class="bg-white h-20 gap-2 pt-5 pl-3">
 
-                    <button id="all-btn" onclick="filterIssues('all')" class="tab tab-active">All</button>
-                    <button id="open-btn" onclick="filterIssues('open')" class="tab tab-active">Open</button>
-                    <button id="closed-btn" onclick="filterIssues('closed')" class="tab tab-active">Closed</button>
+                    <button id="all-btn" onclick="filterIssues('all')" class="btn btn-primary">All</button>
+                    <button id="open-btn" onclick="filterIssues('open')" class="btn btn-primary ">Open</button>
+                    <button id="closed-btn" onclick="filterIssues('closed')" class="btn btn-primary ">Closed</button>
 
                  </div>
 
@@ -107,7 +107,7 @@
                             <img src="assets/Aperture.png" alt="">
                         </div>
                         <div>
-                            <h2 class="text-2xl font-bold"><span id="issue-count">0</span>Issues</h2>
+                            <h2 class="text-2xl font-bold"><span id="issue-count">0</span> Issues</h2>
                             <p class="text-gray-500 mt-1">Track and manage your project issues</p>
                         </div>
                     </div>
@@ -194,6 +194,7 @@
     </section>
 
     <script src="./script/machine.js"></script>
-    <script src="script/login.js"></script>
+    <script src="./script/login.js"></script>
+    <script src="./script/ui.js"></script>
 </body>
 </html>
