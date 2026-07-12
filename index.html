@@ -72,7 +72,7 @@
    <!-- main page -->
     <section id="main-page" class="hidden">
 
-        <!-- navbar -->
+      <!-- navbar -->
          <div class="navbar bg-white shadow px-8">
             <div class="flex=1 flex items-center gap-3">
                 <img src="./assets/github-logo.png" class="w-10" alt="">
@@ -81,11 +81,115 @@
             </div>
             <div class="flex gap-3">
                 <input id="search-input" type="text" placeholder="Search issues..." class="input input-bordered w-72" >
-                <button onclick="searchIssues()" class="btn btn-neutral">Search</button>
+                <button onclick="searchIssues()" class="btn btn-primary">Search</button>
 
             </div>
 
          </div>
+
+         <!-- main container -->
+            <div class="max-w-7xl max auto px-6 py-8">
+                <!-- tabs -->
+                 <div class="tabs tabs-box bg-white">
+
+                    <button id="all-btn" onclick="filterIssues('all')" class="tab tab-active">All</button>
+                    <button id="open-btn" onclick="filterIssues('open')" class="tab tab-active">Open</button>
+                    <button id="closed-btn" onclick="filterIssues('closed')" class="tab tab-active">Closed</button>
+
+                 </div>
+
+                 <!-- dashboard -->
+
+                 <div class="bg-white rounded-xl shadow mt-6 p-5 flex justify-between items-center">
+
+                    <div class="flex gap-3">
+                        <div>
+                            <img src="assets/Aperture.png" alt="">
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold"><span id="issue-count">0</span>Issues</h2>
+                            <p class="text-gray-500 mt-1">Track and manage your project issues</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-6">
+                        <div class="flex items-center gap-2">
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                            <span>Open</span>
+
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-3 h-3 rounded-full bg-purple-500"></div>
+                            <span>Closed</span>
+
+                        </div>
+
+                    </div>
+
+                 </div>
+
+                 <!-- loading spinner -->
+
+                 <div id="spinner" class="hidden flex justify-center my-10"> <span class="loading loading-spinner loading-lg"></span></div>
+
+                 <!-- issue cards -->
+
+                 <div id="issue-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-8"></div>
+
+                 <!-- issue details modal--> 
+                  <dialog id="issue-modal" class="modal">
+                    <div class="modal-box max-w-2xl">
+                        <!-- top -->
+                         <div class="flex justify-between items-center">
+                            <span id="modal-status" class="badge badge-success text-white">Open</span>
+                            <form method="dialog">
+                                <button class="btn btn-sm btn-circle btn-ghost">×</button>
+                            </form>
+
+                         </div>
+
+                         <!-- title -->
+                          <h2 id="modal-title" class="text-2xl font-bold mt-5">Issue Title</h2>
+                          <!-- author & date -->
+                           <div class="flex gap-8 mt-4 text-gray-500">
+                            <p><strong>Author:</strong><span id="modal-author"></span></p>
+                            <p><strong>Created:</strong><span id="modal-date"></span></p>
+
+                           </div>
+
+                           <!-- labels -->
+                            <div id="modal-labels" class="flex gap-2 flex-wrap mt-5"></div>
+
+                            <!-- description -->
+                            <div class="mt-6">
+                                <h3 class="font-bold mb-2">Description</h3>
+                                <p id="modal-description" class="text-gray-600 leading-7"></p>
+                            </div>
+
+                          <!-- information -->
+                           <div class="grid grid-cols-2 gap-5 mt-8">
+                             <div>
+                                <h3 class="font-bold">Assignee</h3>
+                                <p id="modal-assignee">None</p>
+                             </div>
+                             <div>
+                                <h3 class="font-bold">Priority</h3>
+                                <p id="modal-priority">High</p>
+                             </div>
+
+                           </div>
+
+                           <!-- footer -->
+                            <div class="modal-action">
+                                <form method="dialog">
+                                    <button class="btn btn-primary">Close</button>
+                                </form>
+                            </div>
+
+                    </div>
+                  </dialog>
+
+            </div>
 
     </section>
 
